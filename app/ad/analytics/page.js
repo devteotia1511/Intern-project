@@ -1,0 +1,107 @@
+"use client";
+import AnalyticsCards from "@/components/AnalyticsCards";
+import AnalyticsChart from "@/components/AnalyticsChart";
+
+export default function AnalyticsPage() {
+  return (
+    <div className="space-y-6">
+      {/* KPI Cards */}
+      <AnalyticsCards />
+      
+      {/* Charts Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Left Column - Trend Charts */}
+        <div className="lg:col-span-2 space-y-6">
+          <AnalyticsChart />
+        </div>
+        
+        {/* Right Column - Breakdown Charts */}
+        <div className="space-y-6">
+          {/* Impressions by Location */}
+          <div className="bg-white rounded-xl p-6 shadow-sm border">
+            <h3 className="text-lg font-serif font-semibold text-gray-600 mb-4">Impressions by location</h3>
+            <div className="space-y-4 font-serif">
+              {[
+                { location: "Bangalore", impressions: 32000, color: "bg-blue-300", width: "w-24" },
+                { location: "Noida", impressions: 30000, color: "bg-green-300", width: "w-24" },
+                { location: "Mumbai", impressions: 22000, color: "bg-gray-800", width: "w-20" },
+                { location: "Delhi", impressions: 18000, color: "bg-green-300", width: "w-16" },
+                { location: "Pune", impressions: 14000, color: "bg-blue-300", width: "w-14" },
+                { location: "Other", impressions: 12000, color: "bg-green-300", width: "w-12" }
+              ].map((item, index) => (
+                <div key={index} className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600 min-w-[80px]">{item.location}</span>
+                  <div className="flex items-center gap-3 flex-1">
+                    <div className={`h-3 rounded ${item.color} ${item.width}`}></div>
+                    <span className="text-sm font-medium text-gray-800 min-w-[60px] text-right">{item.impressions.toLocaleString()}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Impressions by Device */}
+          <div className="bg-white rounded-xl p-6 shadow-sm border">
+            <h3 className="text-lg font-serif font-semibold text-gray-600 mb-4">Impressions by Device</h3>
+            <div className="space-y-4 font-serif">
+              {[
+                { device: "Android", impressions: 32000, color: "bg-green-300", width: "w-24" },
+                { device: "iOS", impressions: 18000, color: "bg-green-300", width: "w-16" }
+              ].map((item, index) => (
+                <div key={index} className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600 min-w-[80px]">{item.device}</span>
+                  <div className="flex items-center gap-3 flex-1">
+                    <div className={`h-3 rounded ${item.color} ${item.width}`}></div>
+                    <span className="text-sm font-medium text-gray-800 min-w-[60px] text-right">{item.impressions.toLocaleString()}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Clicks by Location */}
+          <div className="bg-white rounded-xl p-6 shadow-sm border">
+            <h3 className="text-lg font-serif font-semibold text-gray-600 mb-4">Clicks by location</h3>
+            <div className="space-y-4 font-serif">
+              {[
+                { location: "Bangalore", clicks: 32000, color: "bg-blue-300", width: "w-24" },
+                { location: "Noida", clicks: 30000, color: "bg-green-300", width: "w-24" },
+                { location: "Mumbai", clicks: 22000, color: "bg-gray-800", width: "w-20" },
+                { location: "Delhi", clicks: 18000, color: "bg-green-300", width: "w-16" },
+                { location: "Pune", clicks: 14000, color: "bg-blue-300", width: "w-14" },
+                { location: "Other", clicks: 12000, color: "bg-green-300", width: "w-12" }
+              ].map((item, index) => (
+                <div key={index} className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600 min-w-[80px]">{item.location}</span>
+                  <div className="flex items-center gap-3 flex-1">
+                    <div className={`h-3 rounded ${item.color} ${item.width}`}></div>
+                    <span className="text-sm font-medium text-gray-800 min-w-[60px] text-right">{item.clicks.toLocaleString()}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Clicks by Device */}
+          <div className="bg-white rounded-xl p-6 shadow-sm border">
+            <h3 className="text-lg font-serif font-semibold text-gray-600 mb-4">Clicks by Device</h3>
+            <div className="space-y-4 font-serif">
+              {[
+                { device: "Android", clicks: 32000, color: "bg-green-300", width: "w-24" },
+                { device: "iOS", clicks: 18000, color: "bg-green-300", width: "w-16" }
+              ].map((item, index) => (
+                <div key={index} className="flex items-center justify-between">
+                  <span className="text-sm text-gray-600 min-w-[80px]">{item.device}</span>
+                  <div className="flex items-center gap-3 flex-1">
+                    <div className={`h-3 rounded ${item.color} ${item.width}`}></div>
+                    <span className="text-sm font-medium text-gray-800 min-w-[60px] text-right">{item.clicks.toLocaleString()}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

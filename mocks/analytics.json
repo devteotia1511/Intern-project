@@ -1,0 +1,13 @@
+{
+    "impressions": 50000,
+    "clicks": 2000,
+    "ctr": 4.0,
+    "spend": 1200,
+    "cpc": 0.6,
+    "daily": [
+      { "date": "2025-08-01", "impressions": 3000, "clicks": 100, "spend": 50 },
+      { "date": "2025-08-02", "impressions": 4000, "clicks": 120, "spend": 70 },
+      { "date": "2025-08-03", "impressions": 3500, "clicks": 140, "spend": 60 },
+      { "date": "2025-08-04", "impressions": 5000, "clicks": 200, "spend": 90 }
+    ]
+  }
