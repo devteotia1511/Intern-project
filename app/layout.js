@@ -1,5 +1,4 @@
-import Link from "next/link";
-import Image from "next/image";
+
 import "./globals.css";
 
 export const metadata = {
